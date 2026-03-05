@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaFalls Park — Waterfall Experience</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons (modern line icons) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <!-- Three.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+  <!-- Three.js Waterfall Canvas -->
+  <canvas id="waterfall-canvas"></canvas>
+
+  <!-- Fluid Overlay -->
+  <div class="fluid-overlay"></div>
+
+  <!-- Navigation -->
+  <nav class="glass-nav" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <i data-lucide="waves" class="nav-logo-icon"></i>
+        <span>AquaFalls</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#tickets" class="nav-link">Tickets</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <button class="nav-cta glass-btn-primary">
+        <i data-lucide="ticket" class="btn-icon"></i>
+        Book Now
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge glass-badge">
+        <i data-lucide="sparkles" class="badge-icon"></i>
+        <span>Season 2026 Now Open</span>
+      </div>
+      <h1 class="hero-title">
+        <span class="title-line">Experience the</span>
+        <span class="title-line gradient-text">Majestic Falls</span>
+      </h1>
+      <p class="hero-subtitle">
+        Immerse yourself in nature's most breathtaking waterfall sanctuary. 
+        Crystal-clear waters, lush landscapes, and unforgettable adventures await.
+      </p>
+      <div class="hero-actions">
+        <a href="#tickets" class="glass-btn-primary hero-btn">
+          <i data-lucide="ticket" class="btn-icon"></i>
+          Get Your Tickets
+        </a>
+        <a href="#experience" class="glass-btn-secondary hero-btn">
+          <i data-lucide="play-circle" class="btn-icon"></i>
+          Explore Park
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item glass-card-mini">
+          <i data-lucide="droplets" class="stat-icon"></i>
+          <div>
+            <span class="stat-number">7</span>
+            <span class="stat-label">Waterfalls</span>
+          </div>
+        </div>
+        <div class="stat-item glass-card-mini">
+          <i data-lucide="trees" class="stat-icon"></i>
+          <div>
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Acres</span>
+          </div>
+        </div>
+        <div class="stat-item glass-card-mini">
+          <i data-lucide="star" class="stat-icon"></i>
+          <div>
+            <span class="stat-number">4.9</span>
+            <span class="stat-label">Rating</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-wrapper">
+      <div class="hero-image glass-frame">
+        <img 
+          src="https://perthaquapark.com.au/wp-content/uploads/2021/09/All-in-one-drone-Web-scaled.jpg" 
+          alt="Aerial view of AquaFalls water park" 
+          loading="eager"
+        />
+        <div class="image-shine"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="section experience-section" id="experience">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag glass-badge">
+          <i data-lucide="compass" class="badge-icon"></i>
+          Discover
+        </span>
+        <h2 class="section-title">Unforgettable <span class="gradient-text">Experiences</span></h2>
+        <p class="section-desc">From thrilling water rides to serene nature walks, every moment at AquaFalls is crafted for wonder.</p>
+      </div>
+      <div class="experience-grid">
+        <!-- Card 1 -->
+        <div class="experience-card glass-card" data-aos="fade-up">
+          <div class="card-image">
+            <img src="https://visitrockingham.com.au/wp-content/uploads/2025/05/Aqua-park-cor-1920x1080.jpg" alt="Aqua park water attractions" loading="lazy" />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon-wrap">
+              <i data-lucide="mountain" class="card-icon"></i>
+            </div>
+            <h3 class="card-title">Cascade Trail</h3>
+            <p class="card-desc">Hike through misty trails alongside cascading waterfalls. A 3-hour guided expedition through pristine wilderness.</p>
+            <div class="card-footer">
+              <span class="card-tag"><i data-lucide="clock" class="tag-icon"></i> 3 hours</span>
+              <span class="card-tag"><i data-lucide="users" class="tag-icon"></i> All ages</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-image">
+            <img src="https://i0.wp.com/www.alwaysadventureready.com/wp-content/uploads/2025/01/perthaquaparkfeature2.jpg?resize=766%2C300&ssl=1" alt="Crystal pool aqua park fun" loading="lazy" />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon-wrap">
+              <i data-lucide="waves" class="card-icon"></i>
+            </div>
+            <h3 class="card-title">Crystal Pools</h3>
+            <p class="card-desc">Swim in natural rock pools fed by crystal-clear waterfall springs. Temperature-perfect waters year-round.</p>
+            <div class="card-footer">
+              <span class="card-tag"><i data-lucide="thermometer" class="tag-icon"></i> 24°C</span>
+              <span class="card-tag"><i data-lucide="shield-check" class="tag-icon"></i> Lifeguard</span>
+            </div>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="experience-card glass-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-image">
+            <img src="https://perthaquapark.com.au/wp-content/uploads/2021/09/All-in-one-drone-Web-scaled.jpg" alt="Aerial drone view of water park" loading="lazy" />
+            <div class="card-image-overlay"></div>
+          </div>
+          <div class="card-body">
+            <div class="card-icon-wrap">
+              <i data-lucide="sunset" class="card-icon"></i>
+            </div>
+            <h3 class="card-title">Sunset Vista</h3>
+            <p class="card-desc">Watch the golden hour paint the falls in amber hues from our exclusive panoramic viewing deck.</p>
+            <div class="card-footer">
+              <span class="card-tag"><i data-lucide="camera" class="tag-icon"></i> Photo spot</span>
+              <span class="card-tag"><i data-lucide="wine" class="tag-icon"></i> Bar</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="section gallery-section" id="gallery">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag glass-badge">
+          <i data-lucide="image" class="badge-icon"></i>
+          Gallery
+        </span>
+        <h2 class="section-title">Moments of <span class="gradient-text">Wonder</span></h2>
+        <p class="section-desc">Explore the beauty that awaits you at AquaFalls Park through our visitors' lens.</p>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-large glass-frame">
+          <img src="https://perthaquapark.com.au/wp-content/uploads/2021/09/All-in-one-drone-Web-scaled.jpg" alt="Grand aerial view of aqua park" loading="lazy" />
+          <div class="gallery-overlay">
+            <i data-lucide="maximize-2" class="gallery-icon"></i>
+            <span>Grand Falls</span>
+          </div>
+        </div>
+        <div class="gallery-item glass-frame">
+          <img src="https://visitrockingham.com.au/wp-content/uploads/2025/05/Aqua-park-cor-1920x1080.jpg" alt="Aqua park water slides" loading="lazy" />
+          <div class="gallery-overlay">
+            <i data-lucide="maximize-2" class="gallery-icon"></i>
+            <span>Rainbow Mist</span>
+          </div>
+        </div>
+        <div class="gallery-item glass-frame">
+          <img src="https://visitrockingham.com.au/wp-content/uploads/2025/05/Aqua-park-cor-1920x1080.jpg" alt="Water park attractions" loading="lazy" />
+          <div class="gallery-overlay">
+            <i data-lucide="maximize-2" class="gallery-icon"></i>
+            <span>Serenity Pool</span>
+          </div>
+        </div>
+        <div class="gallery-item glass-frame">
+          <img src="https://i0.wp.com/www.alwaysadventureready.com/wp-content/uploads/2025/01/perthaquaparkfeature2.jpg?resize=766%2C300&ssl=1" alt="Aqua park fun activities" loading="lazy" />
+          <div class="gallery-overlay">
+            <i data-lucide="maximize-2" class="gallery-icon"></i>
+            <span>Dawn Cascade</span>
+          </div>
+        </div>
+        <div class="gallery-item gallery-wide glass-frame">
+          <img src="https://perthaquapark.com.au/wp-content/uploads/2021/09/All-in-one-drone-Web-scaled.jpg" alt="Panoramic aqua park drone shot" loading="lazy" />
+          <div class="gallery-overlay">
+            <i data-lucide="maximize-2" class="gallery-icon"></i>
+            <span>Skybridge</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tickets Section -->
+  <section class="section tickets-section" id="tickets">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag glass-badge">
+          <i data-lucide="ticket" class="badge-icon"></i>
+          Tickets
+        </span>
+        <h2 class="section-title">Choose Your <span class="gradient-text">Adventure</span></h2>
+        <p class="section-desc">Select the perfect pass for your visit. All tickets include park access and shuttle service.</p>
+      </div>
+      <div class="tickets-grid">
+        <!-- Basic Ticket -->
+        <div class="ticket-card glass-card">
+          <div class="ticket-header">
+            <div class="ticket-tier">
+              <i data-lucide="droplet" class="tier-icon"></i>
+              <span>Splash Pass</span>
+            </div>
+            <div class="ticket-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">29</span>
+              <span class="price-period">/person</span>
+            </div>
+          </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i data-lucide="check" class="feature-check"></i> General park access</li>
+              <li><i data-lucide="check" class="feature-check"></i> Trail maps included</li>
+              <li><i data-lucide="check" class="feature-check"></i> Shuttle service</li>
+              <li><i data-lucide="check" class="feature-check"></i> Picnic area access</li>
+              <li class="feature-disabled"><i data-lucide="x" class="feature-x"></i> Guided tours</li>
+              <li class="feature-disabled"><i data-lucide="x" class="feature-x"></i> Crystal Pool access</li>
+            </ul>
+            <button class="ticket-btn glass-btn-secondary">
+              <i data-lucide="shopping-cart" class="btn-icon"></i>
+              Select Pass
+            </button>
+          </div>
+          <div class="ticket-ribbon">
+            <img src="https://perthaquapark.com.au/wp-content/uploads/2021/09/All-in-one-drone-Web-scaled.jpg" alt="Aqua park aerial" loading="lazy" />
+          </div>
+        </div>
+        <!-- Premium Ticket -->
+        <div class="ticket-card glass-card ticket-featured">
+          <div class="ticket-popular-badge">
+            <i data-lucide="flame" class="badge-icon"></i>
+            Most Popular
+          </div>
+          <div class="ticket-header">
+            <div class="ticket-tier">
+              <i data-lucide="waves" class="tier-icon"></i>
+              <span>Cascade Pass</span>
+            </div>
+            <div class="ticket-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">59</span>
+              <span class="price-period">/person</span>
+            </div>
+          </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i data-lucide="check" class="feature-check"></i> Full park access</li>
+              <li><i data-lucide="check" class="feature-check"></i> Guided waterfall tour</li>
+              <li><i data-lucide="check" class="feature-check"></i> Crystal Pool access</li>
+              <li><i data-lucide="check" class="feature-check"></i> Complimentary lunch</li>
+              <li><i data-lucide="check" class="feature-check"></i> Photo package</li>
+              <li class="feature-disabled"><i data-lucide="x" class="feature-x"></i> Sunset Vista VIP</li>
+            </ul>
+            <button class="ticket-btn glass-btn-primary">
+              <i data-lucide="shopping-cart" class="btn-icon"></i>
+              Select Pass
+            </button>
+          </div>
+          <div class="ticket-ribbon">
+            <img src="https://visitrockingham.com.au/wp-content/uploads/2025/05/Aqua-park-cor-1920x1080.jpg" alt="Premium aqua park experience" loading="lazy" />
+          </div>
+        </div>
+        <!-- VIP Ticket -->
+        <div class="ticket-card glass-card">
+          <div class="ticket-header">
+            <div class="ticket-tier">
+              <i data-lucide="crown" class="tier-icon"></i>
+              <span>Summit Pass</span>
+            </div>
+            <div class="ticket-price">
+              <span class="price-currency">$</span>
+              <span class="price-amount">99</span>
+              <span class="price-period">/person</span>
+            </div>
+          </div>
+          <div class="ticket-body">
+            <ul class="ticket-features">
+              <li><i data-lucide="check" class="feature-check"></i> Unlimited park access</li>
+              <li><i data-lucide="check" class="feature-check"></i> Private guided tour</li>
+              <li><i data-lucide="check" class="feature-check"></i> VIP Crystal Pool</li>
+              <li><i data-lucide="check" class="feature-check"></i> Gourmet dining</li>
+              <li><i data-lucide="check" class="feature-check"></i> Sunset Vista VIP deck</li>
+              <li><i data-lucide="check" class="feature-check"></i> Souvenir gift set</li>
+            </ul>
+            <button class="ticket-btn glass-btn-secondary">
+              <i data-lucide="shopping-cart" class="btn-icon"></i>
+              Select Pass
+            </button>
+          </div>
+          <div class="ticket-ribbon">
+            <img src="https://i0.wp.com/www.alwaysadventureready.com/wp-content/uploads/2025/01/perthaquaparkfeature2.jpg?resize=766%2C300&ssl=1" alt="VIP aqua park experience" loading="lazy" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Ticket Preview -->
+      <div class="ticket-preview-section">
+        <h3 class="preview-title">Your Digital Ticket Preview</h3>
+        <div class="digital-ticket glass-card">
+          <div class="dt-left">
+            <div class="dt-logo">
+              <i data-lucide="waves" class="dt-logo-icon"></i>
+              <span>AquaFalls Park</span>
+            </div>
+            <div class="dt-info">
+              <div class="dt-row">
+                <span class="dt-label">Visitor</span>
+                <span class="dt-value">John Doe</span>
+              </div>
+              <div class="dt-row">
+                <span class="dt-label">Pass Type</span>
+                <span class="dt-value dt-highlight">Cascade Pass</span>
+              </div>
+              <div class="dt-row">
+                <span class="dt-label">Date</span>
+                <span class="dt-value">March 15, 2026</span>
+              </div>
+              <div class="dt-row">
+                <span class="dt-label">Guests</span>
+                <span class="dt-value">2 Adults</span>
+              </div>
+            </div>
+          </div>
+          <div class="dt-divider">
+            <div class="dt-circle dt-circle-top"></div>
+            <div class="dt-dashed"></div>
+            <div class="dt-circle dt-circle-bottom"></div>
+          </div>
+          <div class="dt-right">
+            <div class="dt-qr">
+              <svg viewBox="0 0 100 100" class="qr-placeholder">
+                <rect x="10" y="10" width="25" height="25" rx="2" fill="currentColor"/>
+                <rect x="65" y="10" width="25" height="25" rx="2" fill="currentColor"/>
+                <rect x="10" y="65" width="25" height="25" rx="2" fill="currentColor"/>
+                <rect x="40" y="10" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="40" y="40" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="55" y="40" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="70" y="40" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="40" y="55" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="55" y="55" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="65" y="65" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="80" y="65" width="10" height="10" rx="1" fill="currentColor"/>
+                <rect x="65" y="80" width="25" height="10" rx="1" fill="currentColor"/>
+                <rect x="40" y="70" width="10" height="20" rx="1" fill="currentColor"/>
+              </svg>
+            </div>
+            <span class="dt-code">AQF-2026-0315</span>
+            <span class="dt-scan">Scan at entry</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag glass-badge">
+          <i data-lucide="message-circle" class="badge-icon"></i>
+          Reviews
+        </span>
+        <h2 class="section-title">What Visitors <span class="gradient-text">Say</span></h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card glass-card">
+          <div class="stars">
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+          </div>
+          <p class="testimonial-text">"Absolutely breathtaking! The Crystal Pools were surreal — felt like swimming in a dream. Best nature experience of my life."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80" alt="Sarah M." class="author-avatar" />
+            <div>
+              <span class="author-name">Sarah Mitchell</span>
+              <span class="author-location"><i data-lucide="map-pin" class="location-icon"></i> Portland, OR</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card">
+          <div class="stars">
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+          </div>
+          <p class="testimonial-text">"The Sunset Vista experience is absolutely stunning. The VIP deck with complimentary drinks made it a perfect anniversary trip."</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80" alt="James K." class="author-avatar" />
+            <div>
+              <span class="author-name">James Kowalski</span>
+              <span class="author-location"><i data-lucide="map-pin" class="location-icon"></i> Denver, CO</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card glass-card">
+          <div class="stars">
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+            <i data-lucide="star" class="star-icon filled"></i>
+          </div>
+          <p class="testimonial-text">"Took the kids on the Cascade Trail — they loved every second. The guides were knowledgeable and made it fun for all ages!"</p>
+          <div class="testimonial-author">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Emma L." class="author-avatar" />
+            <div>
+              <span class="author-name">Emma Larsson</span>
+              <span class="author-location"><i data-lucide="map-pin" class="location-icon"></i> Seattle, WA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div class="contact-wrapper glass-card">
+        <div class="contact-info">
+          <h2 class="contact-title">Plan Your <span class="gradient-text">Visit</span></h2>
+          <p class="contact-desc">Our team is ready to help you create the perfect waterfall getaway.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <i data-lucide="map-pin" class="contact-icon"></i>
+              <div>
+                <span class="contact-label">Location</span>
+                <span class="contact-value">1200 Cascade Drive, Blue Ridge Mountains</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="phone" class="contact-icon"></i>
+              <div>
+                <span class="contact-label">Phone</span>
+                <span class="contact-value">+1 (555) 024-AQUA</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="mail" class="contact-icon"></i>
+              <div>
+                <span class="contact-label">Email</span>
+                <span class="contact-value">hello@aquafallspark.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <i data-lucide="clock" class="contact-icon"></i>
+              <div>
+                <span class="contact-label">Hours</span>
+                <span class="contact-value">Daily 8:00 AM — 8:00 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="social-links">
+            <a href="#" class="social-link glass-icon-btn" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" class="social-link glass-icon-btn" aria-label="Twitter"><i data-lucide="twitter"></i></a>
+            <a href="#" class="social-link glass-icon-btn" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" class="social-link glass-icon-btn" aria-label="YouTube"><i data-lucide="youtube"></i></a>
+          </div>
+        </div>
+        <div class="contact-form-wrap">
+          <form class="contact-form" onsubmit="return false;">
+            <div class="form-group">
+              <label for="name"><i data-lucide="user" class="form-icon"></i> Full Name</label>
+              <input type="text" id="name" class="glass-input" placeholder="Your name" />
+            </div>
+            <div class="form-group">
+              <label for="email"><i data-lucide="mail" class="form-icon"></i> Email</label>
+              <input type="email" id="email" class="glass-input" placeholder="you@example.com" />
+            </div>
+            <div class="form-group">
+              <label for="date"><i data-lucide="calendar" class="form-icon"></i> Preferred Date</label>
+              <input type="date" id="date" class="glass-input" />
+            </div>
+            <div class="form-group">
+              <label for="message"><i data-lucide="message-square" class="form-icon"></i> Message</label>
+              <textarea id="message" class="glass-input" rows="4" placeholder="Tell us about your ideal visit..."></textarea>
+            </div>
+            <button type="submit" class="glass-btn-primary form-submit">
+              <i data-lucide="send" class="btn-icon"></i>
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <i data-lucide="waves" class="footer-logo-icon"></i>
+          <span>AquaFalls Park</span>
+        </div>
+        <p class="footer-tagline">Where nature's beauty meets unforgettable adventure.</p>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 AquaFalls Park. All rights reserved.</span>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Fullscreen Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose">
+      <i data-lucide="x"></i>
+    </button>
+    <img src="" alt="Fullscreen gallery image" id="lightboxImg" />
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/waterfall.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
